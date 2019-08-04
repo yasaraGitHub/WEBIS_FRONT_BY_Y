@@ -1,0 +1,60 @@
+
+<form  (submit)="signUp()" id="reg" style="align:center">
+  <fieldset >
+   <legend>Register</legend>
+
+   <div class="form-group col-lg-3">
+     <label for="exampleInputEmail1">Username</label>
+     <input type="username" [(ngModel)]="username" name="username" class="form-control"   placeholder="Enter username">
+   </div>
+
+  <div class="form-group col-lg-3">
+    <label for="exampleInputEmail1">Name</label>
+    <input type="name" [(ngModel)]="name" name="name" class="form-control"  placeholder="Enter name">
+  </div>
+
+  <div class="form-group col-lg-3">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" [(ngModel)]="email" class="form-control"  name="email"  aria-describedby="emailHelp" placeholder="Enter email">
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+  </div>
+
+
+
+
+
+  <div class="form-group col-lg-3">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" [(ngModel)]="password" name="password" class="form-control"  placeholder="Password">
+    </div>
+
+    <div class="form-group col-lg-3">
+      <label for="exampleInputEmail1">Qualifications/Achievements</label>
+      <input type="qual" [(ngModel)]="qual" class="form-control"  name="qual"  aria-describedby="emailHelp" placeholder="Enter qualifications/achievements">
+      <small id="emailHelp" class="form-text text-muted">Makesure to fill this field if you're a content provider.</small>
+    </div>
+
+
+
+  <fieldset id="group1">
+  <p><b>I am a </b>  <input type="radio" value="value1" name="group1" (click)="stuClick()"> student
+  <input type="radio" value="value2" name="group1" (click)="cpClick()">   content provider
+  </fieldset>
+
+
+
+
+<div *ngIf="state; then student else cp"></div>
+
+<ng-template #cp>  <button type="submit" id="sub2" class="btn btn-success" [class.active]="true" > Send Registration Request</button>
+</ng-template>
+
+<ng-template #student>
+  <button type="submit" id="sub1" class="btn btn-primary" [class.active]="true" style="margin:5px;" >Submit  </button>
+  </ng-template>
+
+    <!--<button type="submit" id="sub1" class="btn btn-primary" [class.active]="true" style="margin:5px;" disabled="false">Submit  </button>
+    <button type="submit" id="sub2" class="btn btn-success" [class.active]="true" disabled="false"> Send Registration Request</button>-->
+
+  </fieldset>
+</form>

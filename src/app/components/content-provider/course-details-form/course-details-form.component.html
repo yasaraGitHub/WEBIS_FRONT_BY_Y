@@ -1,0 +1,38 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" >
+<legend>Course Details</legend>
+
+  <div class="form-group col-md-4">
+    <label>Course name</label>
+    <input  #name="ngModel" [(ngModel)]="service.formData.name" name="name" class="form-control"  placeholder="Enter Course">
+  </div>
+
+  <div class="form-group col-md-4">
+    <label>Author of the course</label>
+    <input name="author" #author="ngModel" [(ngModel)]="service.formData.author" class="form-control"  placeholder="Enter Author">
+  </div>
+
+  <div class="form-group col-md-4">
+    <label>Duration of the course</label>
+    <input  name="duration" #duration="ngModel" [(ngModel)]="service.formData.duration" class="form-control" placeholder="Enter Duration">
+  </div>
+
+  <div class="form-group col-md-4">
+    <label>Content of the course</label>
+    <input  name="content" #content="ngModel" [(ngModel)]="service.formData.content" class="form-control"  placeholder="Enter Content">
+  </div>
+
+  <div class="form-group col-md-4">
+    <label>Image Url of the course</label>
+    <input  name="description" #description="ngModel" [(ngModel)]="service.formData.description" class="form-control"  placeholder="Enter Image URL">
+  </div>
+
+  <!--<div class="form-group">
+    <label for="Image">Image Url</label>
+    <input [(ngModel)]="imageurl" name="imageurl" type="image" class="form-control" id="Image" placeholder="Enter Image">
+  </div>-->
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+  </div>
+
+</form>

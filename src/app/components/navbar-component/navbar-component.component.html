@@ -1,0 +1,63 @@
+<head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="">WEBIS</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link"  routerLinkActive="active-link" routerLink="category">Home <span class="sr-only">(current)</span></a>
+      </li>
+    <!--<li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>-->
+      <li class="nav-item">
+        <a class="nav-link"  routerLinkActive="active-link" routerLink="about">About</a>
+      </li>
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+    <div class="">
+    <ul class="form-inline my-2 my-lg-0">
+
+      <li class="nav-item"  [routerLinkActive]="['active']">
+        <a class="nav-link"   [routerLink]="['register']">Register</a>
+      </li>
+      <li *ngIf="!user" class="nav-item">
+        <a class="nav-link"  routerLinkActive="active-link" routerLink="login">LogIn</a>
+      </li>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <li *ngIf="user" ngbDropdown class="nav-item dropdown show">
+         <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false"  style="color:white"  routerLinkActive="active-link">{{user.displayName}}</a>
+         <div ngbDropdownMenu class="dropdown-menu show" aria-labelledby="dropdown01">
+           <a class="dropdown-item" routerLink="category"><b>My Courses</b></a>
+
+           <a class="dropdown-item" routerLink="" (click)="logout()"><b>Log Out</b></a>
+           <a class="dropdown-item" routerLink="CourseDetailsForm"><b>Content Provider</b></a>
+
+         </div>
+       </li>
+    </div>
+
+    <li class="nav-item">
+      <a class="nav-link"  routerLinkActive="active-link" routerLink="/dashboard"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+    </li>
+
+      </ul>
+      </div>
+  </div>
+
+</nav>

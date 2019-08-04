@@ -1,0 +1,17 @@
+<body style="background-color:blue;">
+  <div class="row card-group">
+    <div class="col-4" *ngFor="let course of list ">
+      <div class="card" style="width: 18rem; margin-bottom: 100px; width: 400px; height: 400px;">
+        <img src={{course.description}} class="card-img-left" alt="...">
+        <div class="card-body" style="background-color:lightblue;">
+          <h4 class="card-title">{{course.name | categoryFilter:course.name}}</h4>
+          <h5 class="card-title">{{course.content | categoryFilter:course.name}}</h5>
+          <p class="card-text">By {{course.author | categoryFilter:course.name}}</p>
+          <!--<p class="card-text">{{course.description}}</p>-->
+          <p class="card-text">{{course.duration | categoryFilter:course.name}}</p>
+          <button class="btn btn-success">Add to site</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
